@@ -9,10 +9,9 @@ router.get("/", async (req, res) => {
         ORDER BY id`);
         res.status(200).json(rows);
     } catch (error) {
-         console.error("Erreur GET /api/categories :", error);
-        res.status(500)({erreur : "Erreur de chargement des catégories"});
+        console.error("Erreur GET /api/categories :", error);
+        res.status(500).json({erreur : "Erreur de chargement des catégories"});
     }
-   
 });
 
 export default router

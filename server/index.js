@@ -1,6 +1,7 @@
 import express from "express";
 import objetsRouter from "./routes/objets.js";
-import categoriesRouter from "./routes/categories.js"
+import categoriesRouter from "./routes/categories.js";
+import depotsRouter from "./routes/depots.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json" with {type : "json"};
 
@@ -21,6 +22,8 @@ app.get("/", (req,res) => {
 app.use("/api/objets", objetsRouter);
 
 app.use("/api/categories", categoriesRouter);
+
+app.use("/api/depots", depotsRouter);
 
 //Port de connexion
 app.listen(3000, () => {
