@@ -20,10 +20,11 @@ ORDER BY o.id
 /*/api/objet/:id Un objet, sa catégorie, 
 son dépôt et le nom de sa donatrice*/ 
 
-SELECT o.id, o.libelle AS objet ,c.libelle AS categorie
-FROM objet o
-JOIN categorie c ON o.categorie_id = c.id
-ORDER BY o.id;
+SELECT d.id AS depot, p.prenom, p.nom, o.libelle AS objet_depose
+FROM depot d
+JOIN personne p ON p.id = d.personne_id
+JOIN objet o ON o.depot_id = d.id 
+WHERE d.id = 5;
 /* /api/depots/:id Un dépôt, sa donatrice, 
 et la liste des objets qu’il contient*/
 
