@@ -2,6 +2,7 @@ import express from "express";
 import objetsRouter from "./routes/objets.js";
 import categoriesRouter from "./routes/categories.js";
 import depotsRouter from "./routes/depots.js";
+import personnesRouter from "./routes/personnes.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json" with {type : "json"};
 
@@ -24,6 +25,8 @@ app.use("/api/objets", objetsRouter);
 app.use("/api/categories", categoriesRouter);
 
 app.use("/api/depots", depotsRouter);
+
+app.use("/api/personnes", personnesRouter);
 
 //Port de connexion
 app.listen(3000, () => {
